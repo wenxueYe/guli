@@ -3,7 +3,10 @@ package org.yewenxue.coupon.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+//import com.alibaba.nacos.shaded.org.checkerframework.checker.units.qual.C;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,11 +27,37 @@ import org.yewenxue.common.utils.R;
  * @email yewenxuewy@163.com
  * @date 2022-01-15 15:21:19
  */
+@RefreshScope
 @RestController
 @RequestMapping("coupon/coupon")
 public class CouponController {
     @Autowired
     private CouponService couponService;
+
+    @Value("${user.name}")
+    String userName;
+
+    @Value("${user.age}")
+    int age;
+
+
+
+    @RequestMapping("/test1")
+    public R test1(){
+        return R.ok().put("user info",userName+":"+age);
+    }
+
+    /**
+     *  会员的优惠券信息--cus
+     */
+    @RequestMapping("/member/list")
+    public R memberCoupons() {
+        CouponEntity couponEntity = new CouponEntity();
+        couponEntity.setCouponName("满一百减一百");
+        return R.ok().put("coupons", Arrays.asList(couponEntity));
+    }
+
+
 
     /**
      * 列表

@@ -16,6 +16,7 @@
         <module>guli-member</module>
         <module>guli-coupon</module>
         <module>renren-fast</module>
+        <module>gulimall-gateway</module>
         <module>common</module>
     </modules>
 

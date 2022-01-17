@@ -27,6 +27,12 @@
 
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>2.2.6.RELEASE</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.22</version>
@@ -66,5 +72,95 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <groupId>org.springframework.cloud</groupId>-->
+<!--                    <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+        </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-loadbalancer</artifactId>-->
+<!--            <version>3.1.0</version>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-bootstrap &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-bootstrap</artifactId>-->
+<!--            <version>3.1.0</version>-->
+<!--        </dependency>-->
+
+
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-context &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-context</artifactId>-->
+<!--            <version>3.1.0</version>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash;bootstrap 启动器&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-bootstrap</artifactId>-->
+<!--            <version>3.1.0</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash;配置文件处理器&ndash;&gt;-->
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-configuration-processor &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-configuration-processor</artifactId>-->
+<!--            <version>2.6.2</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash;配置文件加解密&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.github.ulisesbocchio</groupId>-->
+<!--            <artifactId>jasypt-spring-boot-starter</artifactId>-->
+<!--            <version>3.0.1</version>-->
+<!--</dependency>-->
+
+
+
+
+
+
     </dependencies>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Hoxton.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.2.6.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2.2.7.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
 </project>
